@@ -19,16 +19,26 @@ For reference:
       * [Layouts](https://developer.android.com/guide/topics/ui/declaring-layout)
       * [Constraint Layout](https://developer.android.com/training/constraint-layout/)
     * [View Binding](https://developer.android.com/topic/libraries/view-binding)
-* The activity as an execution host
-  * [Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
-  * [Threading model](https://developer.android.com/guide/components/processes-and-threads#Threads)
-* [Application resources](https://developer.android.com/guide/topics/resources/providing-resources)
-    * Language dependent: [localization](https://developer.android.com/guide/topics/resources/localization)
 * [The Kotlin programming language](https://kotlinlang.org/docs/reference/)
-  * Main characteristics: null safety
   
 
 For reference:
   * [Lecture video](coming soon)
+  * Kotlin:
+    * [Null safety](https://kotlinlang.org/docs/null-safety.html)
+    * [Delegated properties](https://kotlinlang.org/docs/delegated-properties.html)
+    * [Lazy properties](https://kotlinlang.org/docs/delegated-properties.html#lazy-properties)
 
-### 15/10/2020 - _To be defined_
+### 15/10/2020 - Activity lifecycle 
+
+* The Activity as an execution host
+  * [Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
+  * [Threading model](https://developer.android.com/guide/components/processes-and-threads#Threads)
+* [Application resources](https://developer.android.com/guide/topics/resources/providing-resources)
+  * Language dependent: [localization](https://developer.android.com/guide/topics/resources/localization)
+* Building a UI
+  * [Custom Views](https://developer.android.com/guide/topics/ui/custom-components)
+  * [Rendering](https://developer.android.com/guide/topics/ui/how-android-draws)
+
+For reference:
+  * [Lecture video](coming soon)
