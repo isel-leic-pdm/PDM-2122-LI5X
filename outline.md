@@ -23,7 +23,7 @@ For reference:
   
 
 For reference:
-  * [Lecture video](coming soon)
+  * [Lecture video](https://www.youtube.com/watch?v=2o3p_yZyYv4&list=PL8XxoCaL3dBj-9DhstfK_krmviLwfN7mX&index=2)
   * Kotlin:
     * [Null safety](https://kotlinlang.org/docs/null-safety.html)
     * [Delegated properties](https://kotlinlang.org/docs/delegated-properties.html)
