@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">QuoteOfDayDemo</string>
+    <string name="app_name">Quote Of Day</string>
+    <string name="fetch_button_text">Fetch Quote</string>
+    <string name="fetching_message">Fetching quote</string>
 </resources>

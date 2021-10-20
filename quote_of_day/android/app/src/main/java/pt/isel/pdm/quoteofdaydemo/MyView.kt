@@ -9,9 +9,11 @@ import android.view.View
 
 class MyView(ctx: Context, attributeSet: AttributeSet?): View(ctx, attributeSet) {
 
-    private val brush: Paint = Paint().apply {
-        color = Color.RED
-        style = Paint.Style.FILL_AND_STROKE
+    companion object {
+        val brush: Paint = Paint().apply {
+            color = Color.RED
+            style = Paint.Style.FILL_AND_STROKE
+        }
     }
 
     override fun onDraw(canvas: Canvas) {
