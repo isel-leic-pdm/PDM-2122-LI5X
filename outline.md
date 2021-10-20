@@ -30,15 +30,33 @@ For reference:
     * [Lazy properties](https://kotlinlang.org/docs/delegated-properties.html#lazy-properties)
 
 ### 15/10/2020 - Activity lifecycle 
-
 * The Activity as an execution host
   * [Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
   * [Threading model](https://developer.android.com/guide/components/processes-and-threads#Threads)
+* Building a UI using the legacy Android View hierarchy: introduction
+  * [Custom Views](https://developer.android.com/guide/topics/ui/custom-components)
+
+For reference:
+  * [Lecture video](coming soon)
+
+## Week 3
+### 20/10/2021 - Building the Quote Of Day Demo
 * [Application resources](https://developer.android.com/guide/topics/resources/providing-resources)
   * Language dependent: [localization](https://developer.android.com/guide/topics/resources/localization)
-* Building a UI
+* Building a UI using the legacy Android View hierarchy: continued
   * [Custom Views](https://developer.android.com/guide/topics/ui/custom-components)
   * [Rendering](https://developer.android.com/guide/topics/ui/how-android-draws)
+* Connectivity
+  * [Permissions](https://developer.android.com/training/basics/network-ops/connecting)
+  * Performing network operations using [Retrofit](https://square.github.io/retrofit/) and [GSON](https://github.com/google/gson)
+    * An alternative: [Volley](https://developer.android.com/training/volley)
+* The Activity as an execution host, continued
+  * Consequences of performing asynchronous operations (e.g. network requests)
+  * _View model_ as an alternative execution host
+    * [Overview](https://developer.android.com/topic/libraries/architecture/viewmodel)
+    * Dependencies:
+      * [Lifecycle components](https://developer.android.com/jetpack/androidx/releases/lifecycle#groovy)
+      * [Activity extensions](https://developer.android.com/jetpack/androidx/releases/activity)
 
 For reference:
   * [Lecture video](coming soon)
