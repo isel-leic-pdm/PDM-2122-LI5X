@@ -6,7 +6,7 @@
   * Resources
 
 For reference:
-  * [Lecture video](https://www.youtube.com/watch?v=4902iEuQSuI&list=PL8XxoCaL3dBj-9DhstfK_krmviLwfN7mX&index=1)
+  * [Lecture video (in Portuguese)](https://www.youtube.com/watch?v=4902iEuQSuI&list=PL8XxoCaL3dBj-9DhstfK_krmviLwfN7mX&index=1)
   
 ## Week 2
 ### 13/10/2021 - Hello Android: Activities
@@ -37,7 +37,7 @@ For reference:
   * [Custom Views](https://developer.android.com/guide/topics/ui/custom-components)
 
 For reference:
-  * [Lecture video](coming soon)
+  * [Lecture video (in Portuguese)](https://www.youtube.com/watch?v=kYFLKZwwBWI&list=PL8XxoCaL3dBj-9DhstfK_krmviLwfN7mX&index=3)
 
 ## Week 3
 ### 20/10/2021 - Building the Quote Of Day Demo
@@ -59,5 +59,8 @@ For reference:
       * [Activity extensions](https://developer.android.com/jetpack/androidx/releases/activity)
 
 For reference:
-  * [Lecture video](coming soon)
+  * [Lecture video (in Portuguese)](https://www.youtube.com/watch?v=nWJyvz70AZ4&list=PL8XxoCaL3dBj-9DhstfK_krmviLwfN7mX&index=4)
   * [Ngrok - Getting started](https://dashboard.ngrok.com/get-started/setup)
+
+### 22/10/2021 - Laboratory
+* Practical class dedicated to the course's project
