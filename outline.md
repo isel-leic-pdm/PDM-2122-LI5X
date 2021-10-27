@@ -64,3 +64,22 @@ For reference:
 
 ### 22/10/2021 - Laboratory
 * Practical class dedicated to the course's project
+
+## Week 4
+### 27/10/2021 - Building the Quote Of Day Demo, continued
+* [Android application reference architecture](https://developer.android.com/jetpack/guide)
+  * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel), revisited
+  * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
+* Android application components: [Application](https://developer.android.com/reference/android/app/Application)
+  * Motivation
+  * Lifecycle
+* Building Android applications:
+  * Navigation between Activities
+    * [Intents (explicit and implicit) and intent filters](https://developer.android.com/guide/components/intents-filters)
+    * [User task and back stack](https://developer.android.com/guide/components/activities/tasks-and-back-stack)
+  * [Options Menu](https://developer.android.com/guide/topics/ui/menus#options-menu) and [menu resource](https://developer.android.com/guide/topics/resources/menu-resource)
+For reference:
+  * Lecture video (in Portuguese) (_coming soon_)
+
+### 29/10/2021 - Laboratory
+* Practical class dedicated to the course's project

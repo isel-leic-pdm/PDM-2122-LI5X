@@ -17,7 +17,7 @@ class MainActivityViewModel : ViewModel() {
 
     companion object {
         val service = Retrofit.Builder()
-            .baseUrl("https://3038-193-236-171-20.ngrok.io/")
+            .baseUrl("https://dee7-194-210-190-253.ngrok.io")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(QuoteOfDayService::class.java)
