@@ -1,37 +1,33 @@
 package pt.isel.pdm.quoteofdaydemo
 
+import android.app.Application
 import android.util.Log
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
-class MainActivityViewModel : ViewModel() {
+class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
 
     init {
         Log.v("APP_TAG", "MainActivityViewModel.init()")
-
     }
 
-    companion object {
-        val service = Retrofit.Builder()
-            .baseUrl("https://dee7-194-210-190-253.ngrok.io")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(QuoteOfDayService::class.java)
-    }
+    private val _quoteOfDay: MutableLiveData<Quote> = MutableLiveData()
+    val quoteOfDay: LiveData<Quote> = _quoteOfDay
 
-    fun getQuoteOfDay(completion: (String) -> Unit) {
-        service.getQuote().enqueue(object: Callback<Quote> {
-            override fun onResponse(call: Call<Quote>, response: Response<Quote>) {
-                completion(response.body()?.text ?: "")
-            }
+    fun getQuoteOfDay() {
+        getApplication<QuoteOfDayApplication>().quoteOfDayService.getQuote().enqueue(
+            object: Callback<Quote> {
+                override fun onResponse(call: Call<Quote>, response: Response<Quote>) {
+                    _quoteOfDay.value = response.body()
+                }
 
-            override fun onFailure(call: Call<Quote>, t: Throwable) {
-                Log.e("APP_TAG", "onFailure", t)
-            }
+                override fun onFailure(call: Call<Quote>, t: Throwable) {
+                    Log.e("APP_TAG", "onFailure", t)
+                }
         })
     }
 }

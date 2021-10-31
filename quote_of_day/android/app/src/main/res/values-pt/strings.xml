@@ -3,4 +3,6 @@
     <string name="app_name">Quote Of Day</string>
     <string name="get_quote">Obter Citação</string>
     <string name="fetching_message">Obtendo citação</string>
+    <string name="about_content">Aplicação de demonstração criada para a disciplina de PDM do ISEL</string>
+    <string name="about_menu">Acerca de</string>
 </resources>

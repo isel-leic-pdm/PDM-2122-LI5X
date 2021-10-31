@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d30951c-b9a2-4078-9db9-ac4c6c73a285" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../outline.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../outline.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/pt/isel/pdm/quoteofdaydemo/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/pt/isel/pdm/quoteofdaydemo/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android/app/src/main/java/pt/isel/pdm/quoteofdaydemo/MainActivityViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/java/pt/isel/pdm/quoteofdaydemo/MainActivityViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/META-INF/quote_of_day_server.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pt/isel/pdm/quote/MainKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pt/isel/pdm/quote/Quote.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pt/isel/pdm/quote/QuoteKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pt/isel/pdm/quote/QuoteOfDayService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/res/values-pt/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/res/values-pt/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
