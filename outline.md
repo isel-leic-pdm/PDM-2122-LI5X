@@ -77,9 +77,30 @@ For reference:
   * Navigation between Activities
     * [Intents (explicit and implicit) and intent filters](https://developer.android.com/guide/components/intents-filters)
     * [User task and back stack](https://developer.android.com/guide/components/activities/tasks-and-back-stack)
-  * [Options Menu](https://developer.android.com/guide/topics/ui/menus#options-menu) and [menu resource](https://developer.android.com/guide/topics/resources/menu-resource)
+  * [Options Menu](https://developer.android.com/guide/topics/ui/menus#options-menu) and [menu resource](https://developer.android.com/guide/topics/resources/menu-resource)   
+  
 For reference:
-  * Lecture video (in Portuguese) (_coming soon_)
+  * [Lecture video (in Portuguese)](https://www.youtube.com/watch?v=zIQU0lzO3I8&list=PL8XxoCaL3dBj-9DhstfK_krmviLwfN7mX&index=5)
 
 ### 29/10/2021 - Laboratory
+* Practical class dedicated to the course's project
+
+## Week 5
+### 03/11/2021 - State management: view state
+* Characterizing state
+  * UI state (a.k.a view state) and application state
+  * [Preserving view state across system initiated process terminations](https://developer.android.com/topic/libraries/architecture/saving-states)
+* Activity lifecycle, revisited
+  * onCreate(), onSaveInstanceState() and onRestoreInstanceState()
+* [Parcelable contract](https://developer.android.com/reference/android/os/Parcelable)
+  * Motivation
+  * Manual implementation
+  * Implementation with @Parcelize ([a Parcelable implementation generator](https://developer.android.com/kotlin/parcelize))
+* [Saved State module for ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel-savedstate)
+
+For reference:
+  * Lecture video (in Portuguese) (_coming soon_)
+  * [Android Debug Bridge (adb) documentation](https://developer.android.com/studio/command-line/adb)
+
+### 05/11/2021 - Laboratory
 * Practical class dedicated to the course's project
