@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <pt.isel.pdm.chess4android.views.BoardView
+        android:id="@+id/boardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

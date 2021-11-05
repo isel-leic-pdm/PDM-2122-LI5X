@@ -15,7 +15,8 @@
         android:name=".QuoteOfDayApplication">
         <activity
             android:name=".AboutActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:process=":anotherProcess"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

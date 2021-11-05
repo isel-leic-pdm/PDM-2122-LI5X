@@ -13,7 +13,7 @@ class QuoteOfDayApplication : Application() {
 
     val quoteOfDayService by lazy {
         Retrofit.Builder()
-            .baseUrl("https://528e-193-236-171-20.ngrok.io")
+            .baseUrl("https://6132-194-210-190-96.ngrok.io")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(QuoteOfDayService::class.java)

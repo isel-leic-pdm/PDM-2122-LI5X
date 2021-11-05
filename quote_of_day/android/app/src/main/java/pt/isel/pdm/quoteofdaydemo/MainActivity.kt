@@ -2,6 +2,7 @@ package pt.isel.pdm.quoteofdaydemo
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -16,6 +17,16 @@ class MainActivity : LoggingActivity() {
 
     private val viewModel: MainActivityViewModel by viewModels()
 
+    private fun displayFetching() {
+        binding.quoteText.text = resources.getText(R.string.fetching_message)
+        binding.quoteAuthor.text = ""
+    }
+
+    private fun displayQuote(quote: Quote) {
+        binding.quoteText.text = quote.text
+        binding.quoteAuthor.text = quote.author
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -24,14 +35,13 @@ class MainActivity : LoggingActivity() {
 
         binding.fetchButton.setOnClickListener {
             Log.v("APP_TAG", "onClick")
-            binding.quoteText.text = resources.getText(R.string.fetching_message)
+            displayFetching()
             viewModel.getQuoteOfDay()
         }
 
         viewModel.quoteOfDay.observe(this) {
             Log.v("APP_TAG", "observer notified")
-            binding.quoteText.text = it.text
-            binding.quoteAuthor.text = it.author
+            displayQuote(it)
         }
     }
 

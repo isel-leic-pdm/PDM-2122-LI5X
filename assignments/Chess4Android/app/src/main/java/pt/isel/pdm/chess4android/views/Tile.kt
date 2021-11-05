@@ -4,9 +4,10 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
-import android.graphics.drawable.VectorDrawable
 import android.view.View
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat
+import pt.isel.pdm.chess4android.Army
+import pt.isel.pdm.chess4android.Piece
 import pt.isel.pdm.chess4android.R
 
 /**
@@ -18,16 +19,22 @@ import pt.isel.pdm.chess4android.R
  *
  * @property type           The tile's type (i.e. black or white)
  * @property tilesPerSide   The number of tiles in each side of the chess board
+ *
  */
 @SuppressLint("ViewConstructor")
 class Tile(
     private val ctx: Context,
     private val type: Type,
     private val tilesPerSide: Int,
+    private val images: Map<Pair<Army, Piece>, VectorDrawableCompat?>,
+    initialPiece: Pair<Army, Piece>? = null,
 ) : View(ctx) {
 
-    private val blackBishopDrawable = VectorDrawableCompat
-        .create(ctx.resources, R.drawable.ic_white_knight, null)
+    var piece: Pair<Army, Piece>? = initialPiece
+        set(value) {
+            field = value
+            invalidate()
+        }
 
     enum class Type { WHITE, BLACK }
 
@@ -48,9 +55,13 @@ class Tile(
     }
 
     override fun onDraw(canvas: Canvas) {
-        val padding = 8
         canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), brush)
-        blackBishopDrawable?.setBounds(padding, padding, width-padding, height-padding)
-        blackBishopDrawable?.draw(canvas)
+        if (piece != null) {
+            images[piece]?.apply {
+                val padding = 8
+                setBounds(padding, padding, width-padding, height-padding)
+                draw(canvas)
+            }
+        }
     }
 }

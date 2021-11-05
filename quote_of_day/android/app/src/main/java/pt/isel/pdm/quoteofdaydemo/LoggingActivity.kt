@@ -9,27 +9,27 @@ const val TAG = "APP_TAG"
 abstract class LoggingActivity : AppCompatActivity() {
 
     init {
-        Log.v(TAG, "init()")
+        Log.v(TAG, "init() ${javaClass.simpleName}")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.v(TAG, "onCreate()")
+        Log.v(TAG, "onCreate() ${javaClass.simpleName}")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.v(TAG, "onStart()")
+        Log.v(TAG, "onStart() ${javaClass.simpleName}")
     }
 
 
     override fun onStop() {
         super.onStop()
-        Log.v(TAG, "onStop()")
+        Log.v(TAG, "onStop() ${javaClass.simpleName}")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.v(TAG, "onDestroy()")
+        Log.v(TAG, "onDestroy() ${javaClass.simpleName}")
     }
 }
