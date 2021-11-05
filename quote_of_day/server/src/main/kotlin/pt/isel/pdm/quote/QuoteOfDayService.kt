@@ -1,5 +1,6 @@
 package pt.isel.pdm.quote
 
+import java.time.LocalDate
 import java.time.LocalDateTime
 
 /**
@@ -23,5 +24,8 @@ class QuoteOfDayService {
      * Gets the quote for the day.
      * @return Today's quote
      */
-    fun getQuoteForToday(): Quote = quotes[LocalDateTime.now().dayOfYear % quotes.size]
+    fun getQuoteForToday() = QuoteOfDay(
+            quotes[LocalDateTime.now().dayOfYear % quotes.size],
+            LocalDate.now().toString()
+        )
 }

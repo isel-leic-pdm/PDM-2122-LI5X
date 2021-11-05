@@ -1,5 +1,6 @@
 package pt.isel.pdm.quote
 
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.slf4j.LoggerFactory
 import spark.Service.ignite
 
@@ -19,7 +20,9 @@ fun main(args: Array<String>) {
     val http = ignite().port(port)
     http.get("/") { _, response ->
         response.header("Content-Type", "application/json")
-        quoteOfDayService.getQuoteForToday().toJson()
+        val quote = jacksonObjectMapper().writeValueAsString(quoteOfDayService.getQuoteForToday())
+        logger.info("Served GET request to \"/\". Payload was $quote")
+        quote
     }
 
     logger.info("Ready and listening on port $port.")

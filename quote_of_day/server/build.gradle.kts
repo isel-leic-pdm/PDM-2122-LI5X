@@ -14,8 +14,9 @@ repositories {
 
 dependencies {
     implementation("com.sparkjava:spark-core:2.9.3")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.+")
     implementation("org.slf4j:slf4j-simple:1.7.32")
-    testImplementation(kotlin("test"))
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
 }
 
 tasks.test {

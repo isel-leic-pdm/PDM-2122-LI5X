@@ -1,5 +1,7 @@
 package pt.isel.pdm.quote
 
+import java.time.LocalDate
+
 /**
  * Represents quotes.
  * @property author - The author
@@ -11,6 +13,11 @@ data class Quote(val author: String, val text: String) {
             throw IllegalArgumentException("Quotes cannot include blank strings")
     }
 }
+
+/**
+ * Represents the daily quote
+ */
+data class QuoteOfDay(val quote: Quote, val date: String)
 
 /**
  * Extension method that converts this quote to a JSON encoded string.
