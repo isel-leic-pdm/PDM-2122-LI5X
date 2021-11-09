@@ -99,8 +99,16 @@ For reference:
 * [Saved State module for ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel-savedstate)
 
 For reference:
-  * Lecture video (in Portuguese) (_coming soon_)
+  * [Lecture video (in Portuguese)](https://www.youtube.com/watch?v=G-H-I-0ZP_o&list=PL8XxoCaL3dBj-9DhstfK_krmviLwfN7mX&index=6)
   * [Android Debug Bridge (adb) documentation](https://developer.android.com/studio/command-line/adb)
 
 ### 05/11/2021 - Laboratory
 * Practical class dedicated to the course's project
+
+## Week 6
+### 10/11/2021 - Laboratory
+* Practical class dedicated to the course's project
+
+### 12/11/2021 - Laboratory
+* Practical class dedicated to the course's project
+
