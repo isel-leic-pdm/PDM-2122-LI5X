@@ -11,6 +11,6 @@ data class Game(val id: String)
 data class Puzzle(val id: String)
 
 interface DailyPuzzleService {
-    @GET("puzzle/daily/")
+    @GET("puzzle/daily")
     fun getPuzzle(): Call<PuzzleInfo>
 }

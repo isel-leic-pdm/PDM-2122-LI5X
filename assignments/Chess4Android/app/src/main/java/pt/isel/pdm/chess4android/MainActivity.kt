@@ -1,6 +1,7 @@
 package pt.isel.pdm.chess4android
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import pt.isel.pdm.chess4android.databinding.ActivityMainBinding
 import pt.isel.pdm.chess4android.views.Tile
@@ -32,8 +33,10 @@ class MainActivity : AppCompatActivity() {
         val call = dailyPuzzleService.getPuzzle()
         call.enqueue(object : Callback<PuzzleInfo> {
             override fun onResponse(call: Call<PuzzleInfo>, response: Response<PuzzleInfo>) {
+                Log.v("Chess4Android", "onResponse")
             }
             override fun onFailure(call: Call<PuzzleInfo>, t: Throwable) {
+                Log.v("Chess4Android", "onFailure")
             }
         })
 
