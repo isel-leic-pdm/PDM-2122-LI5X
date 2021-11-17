@@ -5,10 +5,12 @@ import android.util.Log
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+const val APP_TAG = "QuoteOfDay"
+
 class QuoteOfDayApplication : Application() {
 
     init {
-        Log.v("APP_TAG", "QuoteOfDayApplication.init for ${hashCode()}")
+        Log.v(APP_TAG, "QuoteOfDayApplication.init for ${hashCode()}")
     }
 
     val quoteOfDayService by lazy {

@@ -2,7 +2,6 @@ package pt.isel.pdm.quoteofdaydemo
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -31,16 +30,16 @@ class MainActivity : LoggingActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        Log.v("APP_TAG", "quoteText.hashcode = ${binding.quoteText.hashCode()}")
+        Log.v(APP_TAG, "quoteText.hashcode = ${binding.quoteText.hashCode()}")
 
         binding.fetchButton.setOnClickListener {
-            Log.v("APP_TAG", "onClick")
+            Log.v(APP_TAG, "onClick")
             displayFetching()
             viewModel.getQuoteOfDay()
         }
 
         viewModel.quoteOfDay.observe(this) {
-            Log.v("APP_TAG", "observer notified")
+            Log.v(APP_TAG, "observer notified")
             displayQuote(it)
         }
     }

@@ -1,35 +1,33 @@
 package pt.isel.pdm.quoteofdaydemo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-
-const val TAG = "APP_TAG"
+import androidx.appcompat.app.AppCompatActivity
 
 abstract class LoggingActivity : AppCompatActivity() {
 
     init {
-        Log.v(TAG, "init() ${javaClass.simpleName}")
+        Log.v(APP_TAG, "init() ${javaClass.simpleName}")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.v(TAG, "onCreate() ${javaClass.simpleName}")
+        Log.v(APP_TAG, "onCreate() ${javaClass.simpleName}")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.v(TAG, "onStart() ${javaClass.simpleName}")
+        Log.v(APP_TAG, "onStart() ${javaClass.simpleName}")
     }
 
 
     override fun onStop() {
         super.onStop()
-        Log.v(TAG, "onStop() ${javaClass.simpleName}")
+        Log.v(APP_TAG, "onStop() ${javaClass.simpleName}")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.v(TAG, "onDestroy() ${javaClass.simpleName}")
+        Log.v(APP_TAG, "onDestroy() ${javaClass.simpleName}")
     }
 }
