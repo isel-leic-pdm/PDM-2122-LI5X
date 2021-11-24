@@ -112,3 +112,33 @@ For reference:
 ### 12/11/2021 - Laboratory
 * Practical class dedicated to the course's project
 
+## Week 7
+### 17/11/2021 - Laboratory
+* Practical class dedicated to the course's project
+
+### 19/11/2021 - Laboratory
+* Practical class dedicated to the course's project
+
+## Week 8
+### 24/11/2021 - Android Application Architecture
+* State management: persistent application state
+  * Persisting application state in a local relational DB using [Room](https://developer.android.com/training/data-storage/room#kotlin)
+  * Architectural elements: 
+    * [Entities](https://developer.android.com/training/data-storage/room/defining-data);
+    * [DAOs](https://developer.android.com/training/data-storage/room/accessing-data), and;
+    * [Database](https://developer.android.com/training/data-storage/room#database)
+  * Android threading model, revisited
+    * LiveData as a means to signal asynchronous operations completion
+* Building the UI: Displaying lists of items
+  * Adapting data to views (Adapter pattern)
+  * [Using Recycler View](https://developer.android.com/guide/topics/ui/layout/recyclerview)
+    * View Holder pattern
+    * View recycling
+* [Android application reference architecture, revisited](https://developer.android.com/jetpack/guide)
+For reference:
+  * Lecture video (in Portuguese) (__coming soon__)
+  * [Write asynchronous DAO queries](https://developer.android.com/training/data-storage/room/async-queries)
+  * [Saving data using SQLite](https://developer.android.com/training/data-storage/sqlite)
+
+### 26/11/2021
+* Practical class dedicated to the course's project
