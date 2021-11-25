@@ -1,9 +1,13 @@
-package pt.isel.pdm.quoteofdaydemo
+package pt.isel.pdm.quoteofdaydemo.common
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * Base class used for logging some of the lifecycle callbacks.
+ * Its merely a learning tool. Not really useful in production code.
+ */
 abstract class LoggingActivity : AppCompatActivity() {
 
     init {

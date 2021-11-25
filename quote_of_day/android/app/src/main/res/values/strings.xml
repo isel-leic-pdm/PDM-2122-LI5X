@@ -2,8 +2,10 @@
 <resources>
     <string name="app_name">Quote Of Day</string>
     <string name="get_quote">Get Quote</string>
+    <string name="get_quote_error">Could not fetch the daily quote. Check your internet connection.</string>
     <string name="fetching_message">Fetching quote</string>
     <string name="about_content">Demo application created for the PDM course at ISEL</string>
     <string name="about_menu">About</string>
+    <string name="history_menu">Past Quotes</string>
     <string name="github_icon" translatable="false">GitHub icon</string>
 </resources>

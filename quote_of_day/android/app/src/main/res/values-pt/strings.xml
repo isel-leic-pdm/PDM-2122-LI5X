@@ -2,7 +2,9 @@
 <resources>
     <string name="app_name">Quote Of Day</string>
     <string name="get_quote">Obter Citação</string>
+    <string name="get_quote_error">Não foi possível obter a citação. Verifique a ligação à internet.</string>
     <string name="fetching_message">Obtendo citação</string>
     <string name="about_content">Aplicação de demonstração criada para a disciplina de PDM do ISEL</string>
     <string name="about_menu">Acerca de</string>
+    <string name="history_menu">Citações passadas</string>
 </resources>

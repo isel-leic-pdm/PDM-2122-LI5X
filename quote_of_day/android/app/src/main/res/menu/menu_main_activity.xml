@@ -3,7 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/about"
-        android:icon="@android:drawable/ic_menu_info_details"
+        android:icon="@android:drawable/ic_menu_help"
         android:title="@string/about_menu"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/history"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:title="@string/history_menu"
         app:showAsAction="ifRoom" />
 </menu>
