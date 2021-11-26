@@ -1,4 +1,4 @@
-package pt.isel.pdm.quoteofdaydemo
+package pt.isel.pdm.quoteofdaydemo.daily
 
 import android.app.Application
 import android.util.Log
@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
+import pt.isel.pdm.quoteofdaydemo.common.APP_TAG
 import pt.isel.pdm.quoteofdaydemo.common.QuoteOfDayApplication
 import pt.isel.pdm.quoteofdaydemo.common.QuoteOfDayDTO
 import pt.isel.pdm.quoteofdaydemo.common.ServiceUnavailable
@@ -44,9 +45,11 @@ class MainActivityViewModel(
      */
     fun fetchQuoteOfDay() {
 
+        Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: Fetching ...")
         getApplication<QuoteOfDayApplication>().quoteOfDayService.getQuote().enqueue(
             object: Callback<QuoteOfDayDTO> {
                 override fun onResponse(call: Call<QuoteOfDayDTO>, response: Response<QuoteOfDayDTO>) {
+                    Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: onResponse ")
                     val dailyQuote: QuoteOfDayDTO? = response.body()
                     if (dailyQuote != null && response.isSuccessful)
                         savedState.set<QuoteOfDayDTO>(VIEW_STATE, dailyQuote)
@@ -55,8 +58,10 @@ class MainActivityViewModel(
                 }
 
                 override fun onFailure(call: Call<QuoteOfDayDTO>, error: Throwable) {
+                    Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: onFailure ")
                     _error.value = ServiceUnavailable(cause = error)
                 }
         })
+        Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: Returned from fetchQuoteOfDay")
     }
 }

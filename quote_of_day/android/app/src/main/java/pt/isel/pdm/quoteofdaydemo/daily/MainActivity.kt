@@ -1,4 +1,4 @@
-package pt.isel.pdm.quoteofdaydemo
+package pt.isel.pdm.quoteofdaydemo.daily
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
+import pt.isel.pdm.quoteofdaydemo.R
 import pt.isel.pdm.quoteofdaydemo.about.AboutActivity
 import pt.isel.pdm.quoteofdaydemo.common.LoggingActivity
 import pt.isel.pdm.quoteofdaydemo.common.QuoteDTO

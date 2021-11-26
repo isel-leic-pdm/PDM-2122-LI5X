@@ -4,6 +4,8 @@ import android.app.Application
 import android.util.Log
 import androidx.room.Room
 import pt.isel.pdm.quoteofdaydemo.history.HistoryDatabase
+import pt.isel.pdm.quoteofdaydemo.history.QuoteEntity
+import pt.isel.pdm.quoteofdaydemo.history.doAsync
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -23,7 +25,7 @@ class QuoteOfDayApplication : Application() {
      */
     val quoteOfDayService: QuoteOfDayService by lazy {
         Retrofit.Builder()
-            .baseUrl("https://448f-2001-818-e22f-ee00-50a1-358-32d0-3dd0.ngrok.io")
+            .baseUrl("https://7e8c-2001-818-e22f-ee00-d39-22d0-f0ac-7c2c.ngrok.io")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(QuoteOfDayService::class.java)
@@ -36,5 +38,24 @@ class QuoteOfDayApplication : Application() {
         Room
             .inMemoryDatabaseBuilder(this, HistoryDatabase::class.java)
             .build()
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        doAsync {
+            Log.v(APP_TAG, "Initializing DB")
+            historyDB.getHistoryQuoteDao().insert(
+                QuoteEntity(
+                    id = "2021-11-16", author = "Author 1", content = "A significant quote")
+            )
+            historyDB.getHistoryQuoteDao().insert(
+                QuoteEntity(
+                    id = "2021-11-17", author = "Author 2", content = "Another significant quote")
+            )
+            historyDB.getHistoryQuoteDao().insert(
+                QuoteEntity(
+                    id = "2021-11-18", author = "Author 3", content = "The most significant quote")
+            )
+        }
     }
 }
