@@ -139,7 +139,9 @@ For reference:
 ### 26/11/2021 - Android Application Architecture, continued (preview)
 * State management: persistent application state, continued
   * Persisting application state in a local relational DB using [Room](https://developer.android.com/training/data-storage/room#kotlin), continued
+    * [Type mappings in Room](https://developer.android.com/training/data-storage/room/referencing-data): TypeConverters
   * Android threading model, revisited
+    * Handlers and HandlerThreads
     * LiveData as a means to signal asynchronous operations completion
 * Considerations on the design of android applications
   * [Android application reference architecture](https://developer.android.com/jetpack/guide), revisited
