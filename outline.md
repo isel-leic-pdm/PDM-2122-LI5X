@@ -136,15 +136,27 @@ For reference:
   * Lecture video (in Portuguese) (__coming soon__)
   * [Saving data using SQLite](https://developer.android.com/training/data-storage/sqlite)
 
-### 26/11/2021 - Android Application Architecture, continued (preview)
+### 26/11/2021 - Android Application Architecture, continued
 * State management: persistent application state, continued
   * Persisting application state in a local relational DB using [Room](https://developer.android.com/training/data-storage/room#kotlin), continued
-    * [Type mappings in Room](https://developer.android.com/training/data-storage/room/referencing-data): TypeConverters
   * Android threading model, revisited
-    * Handlers and HandlerThreads
-    * LiveData as a means to signal asynchronous operations completion
+    * [Handlers and HandlerThreads](https://developer.android.com/guide/background/threading)
 * Considerations on the design of android applications
   * [Android application reference architecture](https://developer.android.com/jetpack/guide), revisited
 For reference:
   * Lecture video (in Portuguese) (__coming soon__)
+
+## Week 9
+### 01/12/2021 - National Holliday
+
+### 03/12/2021 - Android Application Architecture, continued (preview)
+* Considerations on the design of Android applications, continued
+* State management: persistent application state, continued
+  * Persisting application state in a local relational DB using [Room](https://developer.android.com/training/data-storage/room#kotlin), continued
+    * [Type mappings in Room](https://developer.android.com/training/data-storage/room/referencing-data): TypeConverters
+  * Android threading model, revisited
+    * LiveData as a means to signal asynchronous operations completion
+For reference:
+  * Lecture video (in Portuguese) (__coming soon__)
   * [Write asynchronous DAO queries](https://developer.android.com/training/data-storage/room/async-queries)
+
