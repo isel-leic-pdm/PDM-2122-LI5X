@@ -4,10 +4,8 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import pt.isel.pdm.quoteofdaydemo.common.QuoteDTO
-import pt.isel.pdm.quoteofdaydemo.common.QuoteOfDayDTO
 import pt.isel.pdm.quoteofdaydemo.databinding.ActivityHistoryBinding
+import pt.isel.pdm.quoteofdaydemo.history.QuoteActivity.Companion.buildIntent
 
 /**
  * The screen used to display the list of daily quotes stored locally.
@@ -28,7 +26,9 @@ class HistoryActivity : AppCompatActivity() {
 
         // Get the list of quotes, if we haven't fetched it yet
         (viewModel.history ?: viewModel.loadHistory()).observe(this) {
-            binding.quoteList.adapter = HistoryAdapter(it)
+            binding.quoteList.adapter = HistoryAdapter(it) { quoteDto ->
+                startActivity(buildIntent(this, quoteDto))
+            }
         }
     }
 }

@@ -24,16 +24,17 @@ class HistoryItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     /**
      * Binds this view holder to the given quote item
      */
-    fun bindTo(quoteOfDayDTO: QuoteOfDayDTO) {
+    fun bindTo(quoteOfDayDTO: QuoteOfDayDTO, onItemCLick: () -> Unit) {
         dayView.text = quoteOfDayDTO.date
         authorView.text = quoteOfDayDTO.quote.author
 
         itemView.setOnClickListener {
+            itemView.isClickable = false
             startAnimation {
-                // TODO: Navigate do other activity
+                onItemCLick()
+                itemView.isClickable = true
             }
         }
-
     }
 
     /**
@@ -62,8 +63,10 @@ class HistoryItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 /**
  * Adapts items in a data set to RecycleView entries
  */
-class HistoryAdapter(private val dataSource: List<QuoteOfDayDTO>):
-    RecyclerView.Adapter<HistoryItemViewHolder>() {
+class HistoryAdapter(
+    private val dataSource: List<QuoteOfDayDTO>,
+    private val onItemCLick: (QuoteOfDayDTO) -> Unit
+): RecyclerView.Adapter<HistoryItemViewHolder>() {
 
     /**
      * Factory method of view holders (and its associated views)
@@ -79,7 +82,9 @@ class HistoryAdapter(private val dataSource: List<QuoteOfDayDTO>):
      * data set to be adapted.
      */
     override fun onBindViewHolder(holder: HistoryItemViewHolder, position: Int) {
-        holder.bindTo(dataSource[position])
+        holder.bindTo(dataSource[position]) {
+            onItemCLick(dataSource[position])
+        }
     }
 
     /**

@@ -1,6 +1,9 @@
 package pt.isel.pdm.quoteofdaydemo.history
 
 import androidx.room.*
+import java.time.Instant
+import java.time.temporal.ChronoUnit
+import java.util.Date
 
 /**
  * The data type that represents data stored in the "history_quote" table of the DB
@@ -9,8 +12,24 @@ import androidx.room.*
 data class QuoteEntity(
     @PrimaryKey val id: String,
     val author: String,
-    val content: String
-)
+    val content: String,
+    val timestamp: Date = Date.from(Instant.now().truncatedTo(ChronoUnit.DAYS))
+) {
+    fun isTodayQuote(): Boolean =
+        timestamp.toInstant().compareTo(Instant.now().truncatedTo(ChronoUnit.DAYS)) == 0
+}
+
+/**
+ * Contains converters used by the ROOM ORM to map between Kotlin types and MySQL types
+ */
+class Converters {
+    @TypeConverter
+    fun fromTimestamp(value: Long) = Date(value)
+
+    @TypeConverter
+    fun dateToTimestamp(date: Date) = date.time
+}
+
 
 /**
  * The abstraction containing the supported data access operations. The actual implementation is
@@ -36,6 +55,7 @@ interface HistoryQuoteDao {
  * method per DAO.
  */
 @Database(entities = [QuoteEntity::class], version = 1)
+@TypeConverters(Converters::class)
 abstract class HistoryDatabase: RoomDatabase() {
     abstract fun getHistoryQuoteDao(): HistoryQuoteDao
 }

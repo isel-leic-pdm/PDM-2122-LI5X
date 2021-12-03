@@ -8,16 +8,18 @@
         <entry key="app/src/main/res/layout/activity_about.xml" value="0.24114583333333334" />
         <entry key="app/src/main/res/layout/activity_history.xml" value="0.21105072463768115" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_quote.xml" value="0.3880208333333333" />
         <entry key="app/src/main/res/layout/item_history_view.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu_main_activity.xml" value="0.24114583333333334" />
       </map>
     </option>
   </component>
   <component name="EntryPointsManager">
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="androidx.room.Delete" />
       <item index="1" class="java.lang.String" itemvalue="androidx.room.Insert" />
       <item index="2" class="java.lang.String" itemvalue="androidx.room.Query" />
+      <item index="3" class="java.lang.String" itemvalue="androidx.room.TypeConverter" />
     </list>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">

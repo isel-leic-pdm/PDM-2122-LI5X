@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".daily.MainActivity">
+    tools:context=".history.QuoteActivity">
 
     <TextView
         android:id="@+id/quote_text"
@@ -37,15 +37,5 @@
         app:layout_constraintEnd_toEndOf="@+id/quote_text"
         app:layout_constraintTop_toBottomOf="@+id/quote_text"
         tools:text="Famous Author" />
-
-    <Button
-        android:id="@+id/fetch_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:text="@string/get_quote"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
