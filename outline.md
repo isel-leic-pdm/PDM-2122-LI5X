@@ -156,8 +156,8 @@ For reference:
   * Persisting application state in a local relational DB using [Room](https://developer.android.com/training/data-storage/room#kotlin), continued
     * [Type mappings in Room](https://developer.android.com/training/data-storage/room/referencing-data): TypeConverters
   * Android threading model, revisited
-    * LiveData as a means to signal asynchronous operations completion
-For reference:
+    * LiveData as a means to signal asynchronous operations completion   
+* For reference:
   * Lecture video (in Portuguese) (__coming soon__)
   * [Property Animations](https://developer.android.com/guide/topics/graphics/prop-animation)
   * [Write asynchronous DAO queries](https://developer.android.com/training/data-storage/room/async-queries)
