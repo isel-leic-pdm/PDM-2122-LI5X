@@ -1,9 +1,13 @@
 package pt.isel.pdm.quoteofdaydemo.history
 
+import android.animation.ValueAnimator
+import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.animation.doOnEnd
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import pt.isel.pdm.quoteofdaydemo.common.QuoteOfDayDTO
 import pt.isel.pdm.quoteofdaydemo.R
@@ -12,7 +16,7 @@ import pt.isel.pdm.quoteofdaydemo.R
  * Implementation of the ViewHolder pattern. Its purpose is to eliminate the need for
  * executing findViewById each time a reference to a view's child is required.
  */
-class HistoryItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class HistoryItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val dayView = itemView.findViewById<TextView>(R.id.day)
     private val authorView = itemView.findViewById<TextView>(R.id.author)
@@ -23,6 +27,35 @@ class HistoryItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) 
     fun bindTo(quoteOfDayDTO: QuoteOfDayDTO) {
         dayView.text = quoteOfDayDTO.date
         authorView.text = quoteOfDayDTO.quote.author
+
+        itemView.setOnClickListener {
+            startAnimation {
+                // TODO: Navigate do other activity
+            }
+        }
+
+    }
+
+    /**
+     * Starts the item selection animation and calls [onAnimationEnd] once the animation ends
+     */
+    private fun startAnimation(onAnimationEnd: () -> Unit) {
+
+        val animation = ValueAnimator.ofArgb(
+            ContextCompat.getColor(itemView.context, R.color.list_item_background),
+            ContextCompat.getColor(itemView.context, R.color.list_item_background_selected),
+            ContextCompat.getColor(itemView.context, R.color.list_item_background)
+        )
+
+        animation.addUpdateListener { animator ->
+            val background = itemView.background as GradientDrawable
+            background.setColor(animator.animatedValue as Int)
+        }
+
+        animation.duration = 400
+        animation.doOnEnd { onAnimationEnd() }
+
+        animation.start()
     }
 }
 

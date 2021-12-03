@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.room.Room
 import pt.isel.pdm.quoteofdaydemo.history.HistoryDatabase
 import pt.isel.pdm.quoteofdaydemo.history.QuoteEntity
-import pt.isel.pdm.quoteofdaydemo.history.doAsync
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -42,7 +41,7 @@ class QuoteOfDayApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        doAsync {
+        callbackAfterAsync({ }) {
             Log.v(APP_TAG, "Initializing DB")
             historyDB.getHistoryQuoteDao().insert(
                 QuoteEntity(

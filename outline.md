@@ -133,7 +133,7 @@ For reference:
     * View Holder pattern
     * View recycling
 For reference:
-  * Lecture video (in Portuguese) (__coming soon__)
+  * [Lecture video (in Portuguese)](https://youtu.be/U48MutMWbFs)
   * [Saving data using SQLite](https://developer.android.com/training/data-storage/sqlite)
 
 ### 26/11/2021 - Android Application Architecture, continued
@@ -144,12 +144,12 @@ For reference:
 * Considerations on the design of android applications
   * [Android application reference architecture](https://developer.android.com/jetpack/guide), revisited
 For reference:
-  * Lecture video (in Portuguese) (__coming soon__)
+  * [Lecture video (in Portuguese)](https://youtu.be/8RlFCRV5hJA)
 
 ## Week 9
 ### 01/12/2021 - National Holliday
 
-### 03/12/2021 - Android Application Architecture, continued (preview)
+### 03/12/2021 - Android Application Architecture, continued
 * Considerations on the design of Android applications, continued
 * State management: persistent application state, continued
   * Persisting application state in a local relational DB using [Room](https://developer.android.com/training/data-storage/room#kotlin), continued
@@ -158,5 +158,10 @@ For reference:
     * LiveData as a means to signal asynchronous operations completion
 For reference:
   * Lecture video (in Portuguese) (__coming soon__)
+  * [Property Animations](https://developer.android.com/guide/topics/graphics/prop-animation)
   * [Write asynchronous DAO queries](https://developer.android.com/training/data-storage/room/async-queries)
 
+## Week 10
+### 08/12/2021 - National Holliday
+
+### 10/12/2021 - Performing background work (__preview__)

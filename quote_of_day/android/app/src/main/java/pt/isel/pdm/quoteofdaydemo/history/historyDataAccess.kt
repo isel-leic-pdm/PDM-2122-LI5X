@@ -1,11 +1,6 @@
 package pt.isel.pdm.quoteofdaydemo.history
 
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 import androidx.room.*
-import pt.isel.pdm.quoteofdaydemo.common.APP_TAG
-import java.util.concurrent.Executors
 
 /**
  * The data type that represents data stored in the "history_quote" table of the DB
@@ -44,40 +39,3 @@ interface HistoryQuoteDao {
 abstract class HistoryDatabase: RoomDatabase() {
     abstract fun getHistoryQuoteDao(): HistoryQuoteDao
 }
-
-/**
- * The executor used to execute data access operations
- */
-private val ioThreadPool = Executors.newSingleThreadExecutor()
-
-/**
- * Dispatches the execution of [asyncAction] on the appropriate thread pool.
- * This is a teaching tool. It will soon be discarded.
- * The [asyncAction] result is published by calling, IN THE MAIN THREAD, the received callbacks.
- */
-fun <T> doAsyncAndCallback(asyncAction: () -> T, success: (T) -> Unit, error: (Throwable) -> Unit) {
-    Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: asyncDataAccess")
-    val mainHandler = Handler(Looper.getMainLooper())
-    ioThreadPool.submit {
-        Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: executing action (DB access)")
-        try {
-            val result = asyncAction()
-            mainHandler.post {
-                Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: executing success callback")
-                success(result)
-            }
-        }
-        catch (ex: Exception) {
-            mainHandler.post {
-                error(ex)
-            }
-        }
-    }
-    Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: asyncDataAccess returned")
-}
-
-/**
- * Dispatches the execution of [action] on the appropriate thread pool.
- * This is a teaching tool. It will soon be discarded.
- */
-fun doAsync(action: () -> Unit) = ioThreadPool.submit(action)

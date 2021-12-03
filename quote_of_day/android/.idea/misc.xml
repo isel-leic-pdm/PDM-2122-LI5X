@@ -4,10 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../../../../layout/custom_preview.xml" value="0.2677083333333333" />
+        <entry key="app/src/main/res/drawable/list_item_background.xml" value="0.2574074074074074" />
         <entry key="app/src/main/res/layout/activity_about.xml" value="0.24114583333333334" />
         <entry key="app/src/main/res/layout/activity_history.xml" value="0.21105072463768115" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/item_history_view.xml" value="0.23278985507246377" />
+        <entry key="app/src/main/res/layout/item_history_view.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu_main_activity.xml" value="0.24114583333333334" />
       </map>
     </option>

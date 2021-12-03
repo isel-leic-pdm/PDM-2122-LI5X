@@ -1,12 +1,11 @@
 package pt.isel.pdm.quoteofdaydemo.history
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import pt.isel.pdm.quoteofdaydemo.common.QuoteDTO
-import pt.isel.pdm.quoteofdaydemo.common.QuoteOfDayApplication
-import pt.isel.pdm.quoteofdaydemo.common.QuoteOfDayDTO
+import pt.isel.pdm.quoteofdaydemo.common.*
 
 /**
  * The actual execution host behind the quote history screen (i.e. the [HistoryActivity]).
@@ -28,17 +27,21 @@ class HistoryActivityViewModel(application: Application): AndroidViewModel(appli
      * Gets the quotes list (history) from the DB.
      */
     fun loadHistory(): LiveData<List<QuoteOfDayDTO>> {
-        val result = MutableLiveData<List<QuoteOfDayDTO>>()
-        doAsyncAndCallback(
+        val publish = MutableLiveData<List<QuoteOfDayDTO>>()
+        history = publish
+        callbackAfterAsync(
             asyncAction = {
+                Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: Getting history from local DB")
                 historyDao.getAll().map {
                     QuoteOfDayDTO(date = it.id, quote = QuoteDTO(it.author, it.content))
                 }
             },
-            success = { result.value = it },
-            error = { result.value = emptyList() }
+            callback = { result ->
+                Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: mapping results")
+                result.onSuccess { publish.value = it }
+                result.onFailure { publish.value = emptyList() }
+            }
         )
-        history = result
-        return result
+        return publish
     }
 }
