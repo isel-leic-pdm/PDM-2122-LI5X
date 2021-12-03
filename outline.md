@@ -149,8 +149,9 @@ For reference:
 ## Week 9
 ### 01/12/2021 - National Holliday
 
-### 03/12/2021 - Android Application Architecture, continued
+### 03/12/2021 - Android Application Architecture, continued (preview)
 * Considerations on the design of Android applications, continued
+  * [Android application reference architecture](https://developer.android.com/jetpack/guide), revisited
 * State management: persistent application state, continued
   * Persisting application state in a local relational DB using [Room](https://developer.android.com/training/data-storage/room#kotlin), continued
     * [Type mappings in Room](https://developer.android.com/training/data-storage/room/referencing-data): TypeConverters
