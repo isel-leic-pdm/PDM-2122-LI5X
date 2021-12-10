@@ -1,4 +1,5 @@
 ## Script da aula 
+Feito na aula de 09
 1. Identificar as mudanças feitas à base de código na preparação da aula
    1. Conjunto de utilitários para operações assíncronas (asyncUtils.kt)
    2. Modificação de HistoryActivityViewModel para usar os utilitários modificados
@@ -11,10 +12,16 @@
 3. Concluir implementação de suporte para armazenamento persistente do histórico
    1. Acrescentar timestamp à QuoteEntity (do tipo Date)
    2. Acrescentar TypeConverter para mapeamento entre Date e Long
-4. Alterar o ecrã principal (MainActivity) para que:
+
+A fazer na aula 10   
+
+1. Alterar o ecrã principal (MainActivity) para que:
    1. A quote seja obtida a partir da BD local, caso lá esteja
    2. Caso contrário é obtida a partir da API remota e armazenada na BD local
    3. Para o efeito criar common.QuoteOfDayRepository, que irá conter as operações assíncronas 
    para acesso às duas fontes de dados
-5. Por fim, tornar a BD persistente
-6. Se sobrar tempo, apresentar a API WorkManager
+2. Por fim, tornar a BD persistente
+3. Trabalho de background em Android
+   1. Motivação e restrições de desenho
+   2. Falar da abordagem clássica, envolvendo outros tipos de componentes
+   3. Apresentar a API WorkManager
