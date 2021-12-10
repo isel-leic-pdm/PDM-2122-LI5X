@@ -165,4 +165,20 @@ For reference:
 ## Week 10
 ### 08/12/2021 - National Holliday
 
-### 10/12/2021 - Performing background work (__preview__)
+### 10/12/2021 - Performing background work
+* Considerations on the design of Android applications, continued
+  * [Android application reference architecture](https://developer.android.com/jetpack/guide), revisited
+* [Performing background work](https://developer.android.com/guide/background)
+  * Motivation
+  * Definition of background work (i.e. non user facing)
+  * Resource management, revisited
+    * [Processes](https://developer.android.com/guide/components/processes-and-threads#Processes)
+    * [Processes and application lifecycle](https://developer.android.com/guide/components/activities/process-lifecycle)
+  * Tradicional Android application architecture using BroadcastReceiver and Service components
+* Introduction to the Work Manager API
+  * Purpose and motivation
+  * Worker definitions and corresponding threading models
+    * [Worker](https://developer.android.com/topic/libraries/architecture/workmanager/advanced/worker)
+    * [ListenableWorker](https://developer.android.com/topic/libraries/architecture/workmanager/advanced/listenableworker)
+* For reference:
+  * Lecture video (in Portuguese) (__coming soon__)
