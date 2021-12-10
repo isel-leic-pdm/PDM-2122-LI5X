@@ -149,7 +149,7 @@ For reference:
 ## Week 9
 ### 01/12/2021 - National Holliday
 
-### 03/12/2021 - Android Application Architecture, continued (preview)
+### 03/12/2021 - Android Application Architecture, continued
 * Considerations on the design of Android applications, continued
   * [Android application reference architecture](https://developer.android.com/jetpack/guide), revisited
 * State management: persistent application state, continued
@@ -165,7 +165,7 @@ For reference:
 ## Week 10
 ### 08/12/2021 - National Holliday
 
-### 10/12/2021 - Performing background work
+### 10/12/2021 - Android Application Architecture, continued
 * Considerations on the design of Android applications, continued
   * [Android application reference architecture](https://developer.android.com/jetpack/guide), revisited
 * [Performing background work](https://developer.android.com/guide/background)
@@ -173,12 +173,25 @@ For reference:
   * Definition of background work (i.e. non user facing)
   * Resource management, revisited
     * [Processes](https://developer.android.com/guide/components/processes-and-threads#Processes)
+* Introduction to the [Work Manager API](https://developer.android.com/topic/libraries/architecture/workmanager/)
+  * Purpose and motivation
+* For reference:
+  * Lecture video (in Portuguese) (__coming soon__)
+
+## Week 11
+### 15/12/2021 - Performing Background Work (preview)
+* [Performing background work](https://developer.android.com/guide/background)
+  * Motivation
+  * Definition of background work (i.e. non user facing)
+  * Resource management, revisited
+    * [Processes](https://developer.android.com/guide/components/processes-and-threads#Processes)
     * [Processes and application lifecycle](https://developer.android.com/guide/components/activities/process-lifecycle)
   * Tradicional Android application architecture using BroadcastReceiver and Service components
-* Introduction to the Work Manager API
+* Introduction to the Work Manager API, continued
   * Purpose and motivation
   * Worker definitions and corresponding threading models
     * [Worker](https://developer.android.com/topic/libraries/architecture/workmanager/advanced/worker)
     * [ListenableWorker](https://developer.android.com/topic/libraries/architecture/workmanager/advanced/listenableworker)
 * For reference:
   * Lecture video (in Portuguese) (__coming soon__)
+

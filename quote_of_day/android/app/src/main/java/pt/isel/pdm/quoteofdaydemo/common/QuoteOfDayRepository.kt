@@ -1,8 +1,20 @@
 package pt.isel.pdm.quoteofdaydemo.common
 
+import android.util.Log
 import pt.isel.pdm.quoteofdaydemo.history.HistoryQuoteDao
 import pt.isel.pdm.quoteofdaydemo.history.QuoteEntity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
+/**
+ * Extension function of [QuoteEntity] to conveniently convert it to a [QuoteOfDayDTO] instance.
+ * Only relevant for this activity.
+ */
+fun QuoteEntity.toQuoteOfDayDTO() = QuoteOfDayDTO(
+    quote = QuoteDTO(author = this.author, text = this.content),
+    date = this.id
+)
 /**
  * Repository for the Quote Of Day
  * It's role is the one described here: https://developer.android.com/jetpack/guide
@@ -22,7 +34,9 @@ class QuoteOfDayRepository(
      * asynchronous operation, which is called in the MAIN THREAD.
      */
     private fun asyncMaybeGetTodayQuoteFromDB(callback: (Result<QuoteEntity?>) -> Unit) {
-        // TODO
+        callbackAfterAsync(callback) {
+            historyQuoteDao.getLast(1).firstOrNull()
+        }
     }
 
     /**
@@ -31,7 +45,24 @@ class QuoteOfDayRepository(
      * asynchronous operation, which is called in the MAIN THREAD.
      */
     private fun asyncGetTodayQuoteFromAPI(callback: (Result<QuoteOfDayDTO>) -> Unit) {
-        // TODO
+        quoteOfDayService.getQuote().enqueue(
+            object: Callback<QuoteOfDayDTO> {
+                override fun onResponse(call: Call<QuoteOfDayDTO>, response: Response<QuoteOfDayDTO>) {
+                    Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: onResponse ")
+                    val dailyQuote: QuoteOfDayDTO? = response.body()
+                    val result =
+                        if (dailyQuote != null && response.isSuccessful)
+                            Result.success(dailyQuote)
+                        else
+                            Result.failure(ServiceUnavailable())
+                    callback(result)
+                }
+
+                override fun onFailure(call: Call<QuoteOfDayDTO>, error: Throwable) {
+                    Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: onFailure ")
+                    callback(Result.failure(ServiceUnavailable(cause = error)))
+                }
+            })
     }
 
     /**
@@ -40,7 +71,15 @@ class QuoteOfDayRepository(
      * asynchronous operation, which is called in the MAIN THREAD.
      */
     private fun asyncSaveToDB(dto: QuoteOfDayDTO, callback: (Result<Unit>) -> Unit = { }) {
-        // TODO
+        callbackAfterAsync(callback) {
+            historyQuoteDao.insert(
+                QuoteEntity(
+                    id = dto.date,
+                    author = dto.quote.author,
+                    content = dto.quote.text
+                )
+            )
+        }
     }
 
     /**
@@ -56,6 +95,30 @@ class QuoteOfDayRepository(
      * Using a boolean to distinguish between both options is a questionable design decision.
      */
     fun fetchQuoteOfDay(mustSaveToDB: Boolean = false, callback: (Result<QuoteOfDayDTO>) -> Unit) {
-        // TODO:
+        asyncMaybeGetTodayQuoteFromDB { maybeEntity ->
+            val maybeQuote = maybeEntity.getOrNull()
+            if (maybeQuote != null) {
+                Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: Got daily quote from local DB")
+                callback(Result.success(maybeQuote.toQuoteOfDayDTO()))
+            }
+            else {
+                asyncGetTodayQuoteFromAPI { apiResult ->
+                    apiResult.onSuccess { quoteDto ->
+                        Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: Got daily quote from API")
+                        asyncSaveToDB(quoteDto) { saveToDBResult ->
+                            saveToDBResult.onSuccess {
+                                Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: Saved daily quote to local DB")
+                                callback(Result.success(quoteDto))
+                            }
+                                .onFailure {
+                                    Log.e(APP_TAG, "Thread ${Thread.currentThread().name}: Failed to save daily quote to local DB", it)
+                                    callback(if(mustSaveToDB) Result.failure(it) else Result.success(quoteDto))
+                                }
+                        }
+                    }
+                    callback(apiResult)
+                }
+            }
+        }
     }
 }

@@ -24,7 +24,7 @@ class QuoteOfDayApplication : Application() {
      */
     val quoteOfDayService: QuoteOfDayService by lazy {
         Retrofit.Builder()
-            .baseUrl("https://bc57-2001-818-e22f-ee00-a505-dff2-e67-79a9.ngrok.io")
+            .baseUrl("https://0ecc-193-236-165-2.ngrok.io")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(QuoteOfDayService::class.java)
@@ -35,26 +35,7 @@ class QuoteOfDayApplication : Application() {
      */
     val historyDB: HistoryDatabase by lazy {
         Room
-            .inMemoryDatabaseBuilder(this, HistoryDatabase::class.java)
+            .databaseBuilder(this, HistoryDatabase::class.java, "history_db")
             .build()
-    }
-
-    override fun onCreate() {
-        super.onCreate()
-        callbackAfterAsync({ }) {
-            Log.v(APP_TAG, "Initializing DB")
-            historyDB.getHistoryQuoteDao().insert(
-                QuoteEntity(
-                    id = "2021-11-16", author = "Author 1", content = "A significant quote")
-            )
-            historyDB.getHistoryQuoteDao().insert(
-                QuoteEntity(
-                    id = "2021-11-17", author = "Author 2", content = "Another significant quote")
-            )
-            historyDB.getHistoryQuoteDao().insert(
-                QuoteEntity(
-                    id = "2021-11-18", author = "Author 3", content = "The most significant quote")
-            )
-        }
     }
 }
