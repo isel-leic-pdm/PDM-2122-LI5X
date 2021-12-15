@@ -131,7 +131,8 @@ For reference:
   * Adapting data to views (Adapter pattern)
   * [Using Recycler View](https://developer.android.com/guide/topics/ui/layout/recyclerview)
     * View Holder pattern
-    * View recycling
+    * View recycling   
+     
 For reference:
   * [Lecture video (in Portuguese)](https://youtu.be/U48MutMWbFs)
   * [Saving data using SQLite](https://developer.android.com/training/data-storage/sqlite)

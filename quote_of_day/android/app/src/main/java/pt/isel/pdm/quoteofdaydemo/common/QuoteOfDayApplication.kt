@@ -3,10 +3,16 @@ package pt.isel.pdm.quoteofdaydemo.common
 import android.app.Application
 import android.util.Log
 import androidx.room.Room
+import androidx.work.Constraints
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
+import pt.isel.pdm.quoteofdaydemo.daily.DownloadDailyQuoteWorker
 import pt.isel.pdm.quoteofdaydemo.history.HistoryDatabase
 import pt.isel.pdm.quoteofdaydemo.history.QuoteEntity
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 const val APP_TAG = "QuoteOfDay"
 
@@ -37,5 +43,28 @@ class QuoteOfDayApplication : Application() {
         Room
             .databaseBuilder(this, HistoryDatabase::class.java, "history_db")
             .build()
+    }
+
+    /**
+     * Called each time the application process is loaded
+     */
+    override fun onCreate() {
+        super.onCreate()
+        val workRequest = PeriodicWorkRequestBuilder<DownloadDailyQuoteWorker>(1, TimeUnit.DAYS)
+            .setConstraints(
+                Constraints.Builder()
+                    .setRequiresBatteryNotLow(true)
+                    .setRequiresStorageNotLow(true)
+                    .build()
+            )
+            .build()
+
+        WorkManager
+            .getInstance(this)
+            .enqueueUniquePeriodicWork(
+                "DownloadDailyQuote",
+                ExistingPeriodicWorkPolicy.KEEP,
+                workRequest
+            )
     }
 }
