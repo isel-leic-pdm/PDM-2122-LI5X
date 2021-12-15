@@ -158,7 +158,7 @@ For reference:
   * Android threading model, revisited
     * LiveData as a means to signal asynchronous operations completion   
 * For reference:
-  * Lecture video (in Portuguese) (__coming soon__)
+  * [Lecture video (in Portuguese)](https://youtu.be/u7HnbJ-T7RU)
   * [Property Animations](https://developer.android.com/guide/topics/graphics/prop-animation)
   * [Write asynchronous DAO queries](https://developer.android.com/training/data-storage/room/async-queries)
 
@@ -176,10 +176,10 @@ For reference:
 * Introduction to the [Work Manager API](https://developer.android.com/topic/libraries/architecture/workmanager/)
   * Purpose and motivation
 * For reference:
-  * Lecture video (in Portuguese) (__coming soon__)
+  * [Lecture video (in Portuguese)](https://youtu.be/aWWlVl57DUs)
 
 ## Week 11
-### 15/12/2021 - Performing Background Work (preview)
+### 15/12/2021 - Performing Background Work
 * [Performing background work](https://developer.android.com/guide/background)
   * Motivation
   * Definition of background work (i.e. non user facing)
@@ -195,3 +195,4 @@ For reference:
 * For reference:
   * Lecture video (in Portuguese) (__coming soon__)
 
+### 17/12/2021 - TBD
