@@ -3,10 +3,7 @@ package pt.isel.pdm.quoteofdaydemo.common
 import android.app.Application
 import android.util.Log
 import androidx.room.Room
-import androidx.work.Constraints
-import androidx.work.ExistingPeriodicWorkPolicy
-import androidx.work.PeriodicWorkRequestBuilder
-import androidx.work.WorkManager
+import androidx.work.*
 import pt.isel.pdm.quoteofdaydemo.daily.DownloadDailyQuoteWorker
 import pt.isel.pdm.quoteofdaydemo.history.HistoryDatabase
 import pt.isel.pdm.quoteofdaydemo.history.QuoteEntity
@@ -53,6 +50,7 @@ class QuoteOfDayApplication : Application() {
         val workRequest = PeriodicWorkRequestBuilder<DownloadDailyQuoteWorker>(1, TimeUnit.DAYS)
             .setConstraints(
                 Constraints.Builder()
+                    .setRequiredNetworkType(NetworkType.CONNECTED)
                     .setRequiresBatteryNotLow(true)
                     .setRequiresStorageNotLow(true)
                     .build()
