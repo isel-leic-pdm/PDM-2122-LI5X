@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CellView">
+        <attr name="column" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="middle" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+        <attr name="row" format="enum">
+            <enum name="top" value="0"/>
+            <enum name="middle" value="1"/>
+            <enum name="bottom" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>

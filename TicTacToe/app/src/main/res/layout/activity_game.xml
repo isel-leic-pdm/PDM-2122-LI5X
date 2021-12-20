@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".game.GameActivity">
+
+    <TextView
+        android:id="@+id/messageBoard"
+        style="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/messagePadding"
+        />
+
+    <TableLayout
+        android:id="@+id/board"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/boardPadding">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <pt.isel.pdm.tictactoe.game.view.CellView
+                android:onClick="handleMove"
+                android:layout_weight="1"
+                android:padding="@dimen/game_cell_padding"
+                app:column="left" app:row="top" />
+
+            <pt.isel.pdm.tictactoe.game.view.CellView
+                android:onClick="handleMove"
+                android:layout_weight="1"
+                android:padding="@dimen/game_cell_padding"
+                app:column="middle" app:row="top" />
+
+            <pt.isel.pdm.tictactoe.game.view.CellView
+                android:onClick="handleMove"
+                android:layout_weight="1"
+                android:padding="@dimen/game_cell_padding"
+                app:column="right" app:row="top" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <pt.isel.pdm.tictactoe.game.view.CellView
+                android:onClick="handleMove"
+                android:layout_weight="1"
+                android:padding="@dimen/game_cell_padding"
+                app:column="left" app:row="middle" />
+
+            <pt.isel.pdm.tictactoe.game.view.CellView
+                android:onClick="handleMove"
+                android:layout_weight="1"
+                android:padding="@dimen/game_cell_padding"
+                app:column="middle" app:row="middle" />
+
+            <pt.isel.pdm.tictactoe.game.view.CellView
+                android:onClick="handleMove"
+                android:layout_weight="1"
+                android:padding="@dimen/game_cell_padding"
+                app:column="right" app:row="middle" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <pt.isel.pdm.tictactoe.game.view.CellView
+                android:onClick="handleMove"
+                android:layout_weight="1"
+                android:padding="@dimen/game_cell_padding"
+                app:column="left" app:row="bottom" />
+
+            <pt.isel.pdm.tictactoe.game.view.CellView
+                android:onClick="handleMove"
+                android:layout_weight="1"
+                android:padding="@dimen/game_cell_padding"
+                app:column="middle" app:row="bottom" />
+
+            <pt.isel.pdm.tictactoe.game.view.CellView
+                android:onClick="handleMove"
+                android:layout_weight="1"
+                android:padding="@dimen/game_cell_padding"
+                app:column="right" app:row="bottom" />
+
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/forfeitButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:text="@string/game_forfeit_button_label" />
+    </LinearLayout>
+</LinearLayout>

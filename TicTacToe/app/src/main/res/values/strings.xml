@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Tic-Tac-Toe</string>
+
+    <!-- Game list screen -->
+    <string name="list_screen_title">TicTacToe challenges</string>
+    <string name="list_create_challenge_button_label">New Challenge</string>
+    <string name="list_menu_update_label">Refresh</string>
+    <string name="error_getting_list">Could not fetch challenges list</string>
+    <string name="error_accepting_challenge">Could not accept challenge</string>
+    <string name="accept_challenge_dialog_title">Accept %s\'s challenge?</string>
+    <string name="accept_challenge_dialog_ok">OK</string>
+    <string name="accept_challenge_dialog_cancel">Cancel</string>
+    <string name="loading">Loading…</string>
+
+    <!-- Create challenge screen -->
+    <string name="create_challenge_title">Create Challenge</string>
+    <string name="create_challenge_waiting_message">Waiting for the contender</string>
+    <string name="create_challenge_prompt_challenger_name">Name</string>
+    <string name="create_challenge_prompt_message">Message</string>
+    <string name="create_challenge_button_label">Post challenge</string>
+    <string name="cancel_challenge_button_label">Cancel</string>
+    <string name="create_challenge_button_label_in_short">Post it</string>
+    <string name="error_creating_challenge">Could not create challenge</string>
+
+    <!-- Game screen -->
+    <string name="game_forfeit_button_label">Forfeit</string>
+</resources>
