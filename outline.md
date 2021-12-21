@@ -194,6 +194,13 @@ For reference:
     * [Worker](https://developer.android.com/topic/libraries/architecture/workmanager/advanced/worker)
     * [ListenableWorker](https://developer.android.com/topic/libraries/architecture/workmanager/advanced/listenableworker)
 * For reference:
-  * Lecture video (in Portuguese) (__coming soon__)
+  * [Lecture video (in Portuguese)](https://youtu.be/cZ0Nr9QQjYo)
 
-### 17/12/2021 - TBD
+### 17/12/2021 - The Tic-Tac-Toe application
+* Part 1 - Considerations on the design of android applications 
+  * Demo: The Tic-Tac-Toe application
+* Part 2 - Laboratory
+  * Practical class dedicated to the course's project    
+* For reference: 
+  * [Lecture video (in Portuguese)](https://youtu.be/fHltsqCBIrY)
+
