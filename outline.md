@@ -204,3 +204,21 @@ For reference:
 * For reference: 
   * [Lecture video (in Portuguese)](https://youtu.be/fHltsqCBIrY)
 
+## Week 12
+### 05/01/2022 - Introduction to Jetpack Compose (extra curricular content)
+* Android application development: a glimpse of the near future
+* Introduction to [Jetpack Compose](https://developer.android.com/jetpack/compose/documentation)
+  * Purpose and motivation
+  * Programming model
+    * @Composable functions: State -> @Composable -> UI
+    * Rules for composable functions: purpose and motivation
+    * State management building blocks: `remember` and `mutableStateOf`
+  * Execution model
+    * For @Composable functions
+    * For UI event handling
+* For reference:
+  * [Thinking in Compose](https://developer.android.com/jetpack/compose/mental-model)
+  * Video lecture (in Portuguese) (__coming soon__)
+
+### 07/01/2022 - Laboratory
+* Practical class dedicated to the course's project

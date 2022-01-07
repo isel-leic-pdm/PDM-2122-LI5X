@@ -24,4 +24,5 @@
 
     <!-- Game screen -->
     <string name="game_forfeit_button_label">Forfeit</string>
+    <string name="title_activity_counter">CounterActivity</string>
 </resources>
