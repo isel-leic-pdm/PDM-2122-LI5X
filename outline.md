@@ -222,3 +222,10 @@ For reference:
 
 ### 07/01/2022 - Laboratory
 * Practical class dedicated to the course's project
+
+## Week 13
+### 12/01/2022 - Introduction to Kotlin's coroutines (extra curricular content)
+__To be defined__
+
+### 14/01/2022 - Laboratory
+* Practical class dedicated to the course's project
