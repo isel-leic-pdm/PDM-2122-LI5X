@@ -225,7 +225,19 @@ For reference:
 
 ## Week 13
 ### 12/01/2022 - Introduction to Kotlin's coroutines (extra curricular content)
-__To be defined__
+* Android application development: a glimpse of the near future
+* Introduction to Kotlin Coroutines
+  * Purpose and motivation
+  * Suspending functions
+  * Coroutine builders, corountine scopes and dispatchers (introduction)
+  * The official docs:
+    * [@ Android docs](https://developer.android.com/kotlin/coroutines)
+    * [@ Kotlin docs](https://kotlinlang.org/docs/coroutines-basics.html)
+* For reference:
+  * Video lecture (in Portuguese) (__coming soon__)
+  * [Structured Concurrency](https://elizarov.medium.com/structured-concurrency-722d765aa952)
+  * [Conversation with Pedro Félix about coroutines (in Portuguese)](https://youtu.be/K_fqNQz3UoU)
+  * [Using Kotlin Coroutines for Asynchronous and Concurrent Programming, by Pedro Félix](https://www.youtube.com/watch?v=zS5GLpgWNKQ)
 
 ### 14/01/2022 - Laboratory
 * Practical class dedicated to the course's project
