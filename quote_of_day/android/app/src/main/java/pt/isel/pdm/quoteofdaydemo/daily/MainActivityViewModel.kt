@@ -2,10 +2,8 @@ package pt.isel.pdm.quoteofdaydemo.daily
 
 import android.app.Application
 import android.util.Log
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.*
+import kotlinx.coroutines.launch
 import pt.isel.pdm.quoteofdaydemo.common.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,15 +39,11 @@ class MainActivityViewModel(
      * result (if successful) is published to the associated [LiveData] instance, [quoteOfDay].
      */
     fun fetchQuoteOfDay() {
-
-        Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: Fetching ...")
         val app = getApplication<QuoteOfDayApplication>()
         val repo = QuoteOfDayRepository(app.quoteOfDayService, app.historyDB.getHistoryQuoteDao())
-        repo.fetchQuoteOfDay { result ->
-            result
-                .onSuccess { savedState.set(VIEW_STATE, result.getOrThrow()) }
-                .onFailure { _error.value = it }
+        viewModelScope.launch {
+            val result = repo.fetchQuoteOfDay()
+            savedState.set(VIEW_STATE, result)
         }
-        Log.v(APP_TAG, "Thread ${Thread.currentThread().name}: Returned from fetchQuoteOfDay")
     }
 }

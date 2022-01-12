@@ -25,7 +25,7 @@ class HistoryActivity : AppCompatActivity() {
         binding.quoteList.layoutManager = LinearLayoutManager(this)
 
         // Get the list of quotes, if we haven't fetched it yet
-        (viewModel.history ?: viewModel.loadHistory()).observe(this) {
+        viewModel.quotesHistory.observe(this) {
             binding.quoteList.adapter = HistoryAdapter(it) { quoteDto ->
                 startActivity(buildIntent(this, quoteDto))
             }

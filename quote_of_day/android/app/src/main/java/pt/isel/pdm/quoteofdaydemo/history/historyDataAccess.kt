@@ -38,16 +38,16 @@ class Converters {
 @Dao
 interface HistoryQuoteDao {
     @Insert
-    fun insert(quote: QuoteEntity)
+    suspend fun insert(quote: QuoteEntity)
 
     @Delete
-    fun delete(quote: QuoteEntity)
+    suspend fun delete(quote: QuoteEntity)
 
     @Query("SELECT * FROM history_quote ORDER BY id DESC LIMIT 100")
-    fun getAll(): List<QuoteEntity>
+    suspend fun getAll(): List<QuoteEntity>
 
     @Query("SELECT * FROM history_quote ORDER BY id DESC LIMIT :count")
-    fun getLast(count: Int): List<QuoteEntity>
+    suspend fun getLast(count: Int): List<QuoteEntity>
 }
 
 /**
