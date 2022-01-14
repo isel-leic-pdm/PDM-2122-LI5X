@@ -218,7 +218,7 @@ For reference:
     * For UI event handling
 * For reference:
   * [Thinking in Compose](https://developer.android.com/jetpack/compose/mental-model)
-  * Video lecture (in Portuguese) (__coming soon__)
+  * [Video lecture (in Portuguese)](https://youtu.be/Ef2uLFrhgl8)
 
 ### 07/01/2022 - Laboratory
 * Practical class dedicated to the course's project
@@ -234,10 +234,11 @@ For reference:
     * [@ Android docs](https://developer.android.com/kotlin/coroutines)
     * [@ Kotlin docs](https://kotlinlang.org/docs/coroutines-basics.html)
 * For reference:
-  * Video lecture (in Portuguese) (__coming soon__)
+  * [Video lecture (in Portuguese)](https://youtu.be/AtIi6d7MbLo)
   * [Structured Concurrency](https://elizarov.medium.com/structured-concurrency-722d765aa952)
   * [Conversation with Pedro Félix about coroutines (in Portuguese)](https://youtu.be/K_fqNQz3UoU)
   * [Using Kotlin Coroutines for Asynchronous and Concurrent Programming, by Pedro Félix](https://www.youtube.com/watch?v=zS5GLpgWNKQ)
 
 ### 14/01/2022 - Laboratory
 * Practical class dedicated to the course's project
+
